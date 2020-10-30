@@ -6,11 +6,11 @@ $(function() {
 	var formula = document.querySelector('#formula');
 	var condition = document.querySelector('#condition');
 	var result = document.querySelector('#result');
-
-	document.querySelectorAll('input[name], #formula').forEach(function (input) {
+	
+	document.querySelectorAll('input[name], #condition').forEach(function (input) {
 		input.addEventListener('keyup', function () {
 			try {
-				var calculator = new Function('a1, b1, a2, b2', 'return ' + formula.value + ';');
+				var calculator = new Function('a1, b1, a2, b2', 'return ' + condition.value + ';');
 	
 				result.value = calculator(Number(a1.value), Number(b1.value), Number(a2.value), Number(b2.value));
 			}
@@ -20,17 +20,11 @@ $(function() {
 			}
 	
 			if (result.value == 'true') {
-				$('#result').css({'background-color': 'green'});
+				$('#result').css({'background-color': '#B6D7A8'});
 			} else {
-				$('#result').css({'background-color': 'white'});
+				$('#result').css({'background-color': '#FFF'});
 			}
 		});
 	});
 });
-
-
-
-
-
-
 
